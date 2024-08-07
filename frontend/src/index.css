@@ -1,0 +1,175 @@
+main{
+  min-height: 100vh;
+  
+}
+footer{
+  margin-top: 10px;
+}
+h1{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h1{
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+h3{
+  padding: 1rem 0;
+}
+
+.rating span{
+  margin: 0.1 rem;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+display: flex;
+background-color: white;
+
+}
+
+.carousel-control-prev-icon{
+background-image: url("https://img.icons8.com/glyph-neue/64/1A1A1A/back.png");
+}
+.carousel-control-next-icon{
+background-image: url("https://img.icons8.com/glyph-neue/64/1A1A1A/forward--v1.png");
+}
+.carousel-caption {
+position: absolute;
+top: 0;
+
+}
+
+.carousel-caption h4 {
+color: black;
+}
+
+.carousel img {
+display:block;
+height: 300px;
+padding: 30px;
+margin: 40px;
+border-radius: 50%;
+margin-left: auto;
+margin-right: auto;
+}
+.carousel a {
+margin: 0 auto;
+}
+@media (max-width: 900px) {
+.carousel-caption h2 {
+  font-size: 2.5vw;
+}
+}
+
+
+.carousel-indicators [data-bs-target] {background-color: gray;}
+.carousel-indicators .active {background-color: black;}
+
+
+.card-input {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.input-row {
+display: flex;
+gap: 25px;
+margin-left: 14px;
+margin-top: 3px;
+
+}
+
+.input-field {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+input,
+.stripe-element {
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+
+label {
+margin-bottom: 5px;
+font-weight: bold;
+
+}
+
+.pay-button {
+margin-top: 20px;
+padding: 10px 20px;
+background: #6772e5;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+button:hover {
+background: #5469d4;
+}
+
+button:disabled {
+background: #bbb;
+cursor: not-allowed;
+}
+
+Button{
+margin-top: 10px;
+}
+
+.card-button{
+
+margin: 4% 25%;
+align-items: center;
+padding: 13px 32px;
+}
+
+.form-check-input[type="radio"] {
+margin-right: 10px;
+margin-top: 1px;
+}
+
+
+/*loader css*/
+.colorful {
+
+margin: 4.65rem auto;
+width: 18.4px;
+height: 18.4px;
+ background: #474bff;
+ border-radius: 50%;
+ animation: colorful-qyh1n1md 1.5s infinite;
+}
+
+@keyframes colorful-qyh1n1md {
+ 0%, 100% {
+    transform: translate(-39.2px);
+    box-shadow: 0     0 #ff6761, 0     0 #ffd82e;
+ }
+
+ 40% {
+    transform: translate( 39.2px);
+    box-shadow: -16.8px  0 #ff6761,-33.6px  0 #ffd82e;
+ }
+
+ 50% {
+    transform: translate( 39.2px);
+    box-shadow: 0     0 #ff6761, 0     0 #ffd82e;
+ }
+
+ 90% {
+    transform: translate(-39.2px);
+    box-shadow: 16.8px  0 #ff6761, 33.6px  0 #ffd82e;
+ }
+}
