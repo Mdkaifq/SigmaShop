@@ -3,6 +3,7 @@
   "proxy": "http://127.0.0.1:8000",
   "version": "0.1.0",
   "private": true,
+  "homepage":".",
   "dependencies": {
     "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^4.1.0",
