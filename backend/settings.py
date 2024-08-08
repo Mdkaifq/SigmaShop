@@ -134,10 +134,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_27086bc4_7f59_437e_a662_9c5f0e71ecbe',
+        'USER': 'u_27086bc4_7f59_437e_a662_9c5f0e71ecbe',
+        'PASSWORD': 'kp8CH6X6A04YrANB68S9CIq5OS1LnD04Mq0Zp287xEhr9dw75C0E',
+        'HOST': 'pg.rapidapp.io',
+        'PORT': '5432'
     }
 }
 
