@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { logout } from "../actions/userActions";
 import SearchBox from "./SearchBox";
 
@@ -18,22 +18,25 @@ function Header() {
   };
   return (
     <header>
-      <Navbar variant="dark" collapseOnSelect style={{backgroundColor: "black"}}>
-        <Container fluid>
-          <Navbar.Brand as={Link} to="/">
+      <Navbar variant="dark" expand="lg" style={{backgroundColor: "black"}} collapseOnSelect>
+        <Container>
+          <LinkContainer to="/">
+          <Navbar.Brand>
           <i className="fas fa-shopping-cart" ></i>
             Sigmashop
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          </LinkContainer>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          
             <Nav
-              className="mr-auto"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
+              className="ml-auto"
             >
-              <Nav.Link as={Link} to="/cart">
+              <LinkContainer to="/cart">
+              <Nav.Link>
                 <i className="fas fa-shopping-cart"></i>Cart
               </Nav.Link>
+              </LinkContainer>
 
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
@@ -45,9 +48,11 @@ function Header() {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Nav.Link as={Link} to="/login">
+                <LinkContainer to="/login">
+                <Nav.Link>
                   <i className="fas fa-user"></i>Login
                 </Nav.Link>
+                </LinkContainer>
               )}
 
               {userInfo && userInfo.isAdmin && (
@@ -65,8 +70,9 @@ function Header() {
                 </NavDropdown>
               )}
             </Nav>
+            <SearchBox/>
           </Navbar.Collapse>
-              <SearchBox/>
+               
         </Container>
       </Navbar>
     </header>
