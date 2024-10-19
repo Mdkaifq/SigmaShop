@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from pathlib import Path
 
@@ -145,11 +147,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_27086bc4_7f59_437e_a662_9c5f0e71ecbe',
-        'USER': 'u_27086bc4_7f59_437e_a662_9c5f0e71ecbe',
-        'PASSWORD': 'kp8CH6X6A04YrANB68S9CIq5OS1LnD04Mq0Zp287xEhr9dw75C0E',
-        'HOST': 'pg.rapidapp.io',
-        'PORT': '5432'
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': '6543'
     }
 }
 
@@ -191,7 +193,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
-STATICFILES_DIR=[
+STATICFILES_DIRS=[
     BASE_DIR / 'static',
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
@@ -214,4 +216,4 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STRIPE_SECRET_KEY = "sk_test_51PjefZRrIw1m0GxpA8Upfh5GSfRZQPCMCWFlQMzjROuUsyqmcLr88GRmwPSOqLaPK0PFHugt3ox1P4KKoK18nJqQ00a6x8YHty"
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
